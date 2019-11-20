@@ -9,19 +9,21 @@ htdocs/*
 
 # Ignora tudo no diretório "SSL-ROOT"
 ssl-root/*
+!ssl-root/.gitkeep
 
-# ignora tudo no diretório "mysql/data"
+# ignora tudo no diretório "mysql/data" , exceto:
 mysql/data/*
+!mysql/data/.gitkeep
 
-# ignora tudo no diretório "nginx/logs"
-nginx/logs/
+# ignora tudo no diretório "nginx/logs" , exceto:
+nginx/logs/*
+!nginx/logs/.gitkeep
+
 
 # ignora tudo no diretório "nginx/sites", exceto:
 nginx/sites/*
 !nginx/sites/default.conf
 
-# ignora todos os arquivos iniciados com .
-.*
 
 # rastreia o arquivo .gitignore (Não ignorar isso)
 !.gitignore
