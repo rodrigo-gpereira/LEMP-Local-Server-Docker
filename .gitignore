@@ -11,7 +11,7 @@ htdocs/*
 ssl-root/*
 
 # ignora tudo no diretório "mysql/data"
-mysql/data/
+mysql/data/*
 
 # ignora tudo no diretório "nginx/logs"
 nginx/logs/
