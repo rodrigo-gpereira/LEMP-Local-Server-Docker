@@ -7,9 +7,9 @@ htdocs/*
 !htdocs/index.html
 !htdocs/index.php
 
-# Ignora tudo no diretório "SSL-ROOT"
+# Ignora tudo no diretório "SSL-ROOT" , exceto:
 ssl-root/*
-!ssl-root/.gitkeep
+!ssl-root/browser-trust.sh
 
 # ignora tudo no diretório "mysql/data" , exceto:
 mysql/data/*

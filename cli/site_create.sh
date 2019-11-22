@@ -10,8 +10,10 @@ die() { echo -e '\e[1;31m'$1'\e[m'; exit 1; }
 NGINX_DIR='./nginx/sites'
 WEB_DIR='./htdocs'
 SSL_DIR='./ssl-root'
-ROOTCA_PASS='Sofine19$INFO$'
 USER='www-data'
+
+echo -e "Insira a senha do certificado ROOTCA:"
+read ROOTCA_PASS
 
 # Sanity check
 [ $(id -g) != "0" ] && die "Script must be run as root."
@@ -136,3 +138,6 @@ rm $SSL_DIR/${1//[-._]/}.crs.cnf
 rm $SSL_DIR/${1//[-._]/}.ext
 
 ok "Site Created for $1"
+
+#Reinciar o serviço do nginx no container
+docker-compose restart nginx
