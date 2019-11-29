@@ -1,0 +1,76 @@
+# -----------------------------------------------------------------
+# .gitignore para Docker
+# -----------------------------------------------------------------
+
+# ignora tudo no diretório "htdocs", exceto:
+htdocs/*
+!htdocs/index.html
+!htdocs/index.php
+
+# Ignora tudo no diretório "SSL-ROOT"
+ssl-root/* 
+
+# Ignora tudo no diretório "SSL-ROOTCA" , exceto:
+ssl-rootCA/*
+!ssl-rootCA/browser-trust.sh
+
+# ignora tudo no diretório "mysql/data" , exceto:
+mysql/data/*
+!mysql/data/.gitkeep
+
+# ignora tudo no diretório "nginx/logs" , exceto:
+nginx/logs/*
+!nginx/logs/.gitkeep
+
+
+# ignora tudo no diretório "nginx/sites", exceto:
+nginx/sites/*
+!nginx/sites/default.conf
+
+
+# rastreia o arquivo .gitignore (Não ignorar isso)
+!.gitignore
+
+# rastreia o arquivo .editorconfig (Não ignorar isso)
+!.editorconfig
+
+# rastreia o arquivo readme.md (Não ignorar isso)
+!readme.md
+
+# ignora todos os arquivos que começam com ~
+~*
+
+# ignora arquivos gerados pelo sistema operacional
+ehthumbs.db
+Thumbs.db
+
+# ignora arquivos de Editores
+*.sublime-project
+*.sublime-workspace
+*.komodoproject
+.idea
+
+# ignora arquivos de log e banco de dados
+*.log
+*.sql
+*.sqlite
+
+# ignora arquivos compilados
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
+
+# ignora arquivos de pacote
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+.DS_Store
