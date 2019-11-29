@@ -8,6 +8,7 @@ services:
       dockerfile: Dockerfile
     volumes:
       - ${APPLICATION}:/var/www/html
+      - ${SSLPATH}:/var/www/ssl-rootCA
       - ${NGINX_HOST_LOG_PATH}:/var/log/nginx
       - ${NGINX_SITES_PATH}:/etc/nginx/conf.d
     ports:
@@ -16,7 +17,8 @@ services:
     links:
       - php-fpm
     networks:
-      - code-network
+      code-network:
+        ipv4_address: 172.18.0.4
 
   php-fpm:
     container_name: php-fpm
@@ -26,10 +28,13 @@ services:
     volumes:
       - ./php-fpm/php.ini:/usr/local/etc/php/php.ini
       - ${APPLICATION}:/var/www/html
+      - ${SSLPATH}:/var/www/ssl-rootCA
+      - ${CLIPATH}:/var/www/cli
     expose:
       - "9000"
     networks:
-      - code-network
+      code-network:
+        ipv4_address: 172.18.0.3
 
   mysql:
     container_name: mysql
@@ -47,8 +52,13 @@ services:
       - MYSQL_PASSWORD=${MYSQL_PASSWORD}
       - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
     networks:
-      - code-network
+      code-network:
+        ipv4_address: 172.18.0.2
 
 networks:
   code-network:
     driver: bridge
+    ipam:
+      config:
+        - subnet: 172.18.0.0/16
+          gateway: 172.18.0.1

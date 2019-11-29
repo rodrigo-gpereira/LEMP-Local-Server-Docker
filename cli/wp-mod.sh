@@ -24,9 +24,9 @@ chgrp ${WS_GROUP} ${WP_ROOT}/wp-config.php
 chmod 660 ${WP_ROOT}/wp-config.php
  
 # permitir que o wordpress gerencie o arquivo .htaccess
-touch ${WP_ROOT}/.htaccess
-chgrp ${WS_GROUP} ${WP_ROOT}/.htaccess
-chmod 664 ${WP_ROOT}/.htaccess
+#touch ${WP_ROOT}/.htaccess
+#chgrp ${WS_GROUP} ${WP_ROOT}/.htaccess
+#chmod 664 ${WP_ROOT}/.htaccess
  
 # permitir que o wordpress gerencie o diretório wp-content
 find ${WP_ROOT}/wp-content -exec chgrp ${WS_GROUP} {} \;

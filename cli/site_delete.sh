@@ -16,8 +16,10 @@ WEB_DIR='./htdocs'
 [ $# != "1" ] && die "Usage: $(basename $0) domainName"
 
 
-#Remover os arquivos de modelo CRS.CNF e .EXT
+#Remover os arquivos de configuração e diretório
 rm $NGINX_DIR/${1//[-._]/}.conf
 rm -r $WEB_DIR/$1/
+
+docker exec -it php-fpm /var/www/cli/setup-hosts-file.sh $1 r 
 
 ok "Site remove $1"

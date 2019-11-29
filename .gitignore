@@ -7,9 +7,12 @@ htdocs/*
 !htdocs/index.html
 !htdocs/index.php
 
-# Ignora tudo no diretório "SSL-ROOT" , exceto:
+# Ignora tudo no diretório "SSL-ROOT"
 ssl-root/*
-!ssl-root/browser-trust.sh
+
+# Ignora tudo no diretório "SSL-ROOTCA" , exceto:
+ssl-rootCA/*
+!ssl-rootCA/browser-trust.sh
 
 # ignora tudo no diretório "mysql/data" , exceto:
 mysql/data/*
