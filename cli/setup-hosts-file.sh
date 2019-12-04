@@ -14,13 +14,11 @@ NC='\033[0m'
 HOSTNAME=$1
 QUESTION=$2
 NGINX_IP="172.18.0.4"
-
 ETC_HOSTS=/etc/hosts
-IP=$NGINX_IP
 
 if [ ${QUESTION} == "a" ]; then
 
-	HOSTS_LINE="$IP\t$HOSTNAME"
+	HOSTS_LINE="$NGINX_IP\t$HOSTNAME"
 
 	if [ -n "$(grep $HOSTNAME /etc/hosts)" ]; then
 		echo -e ${YELLOW}"$HOSTNAME already exists: $(grep $HOSTNAME $ETC_HOSTS) ${NC}"
