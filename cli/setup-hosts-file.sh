@@ -10,11 +10,13 @@ BLUE='\033[0;34m'
 YELLOW='\033[0;93m'
 NC='\033[0m'
 
-ETC_HOSTS=/etc/hosts
-IP="172.18.0.4"
-
+# Variables #
 HOSTNAME=$1
 QUESTION=$2
+NGINX_IP="172.18.0.4"
+
+ETC_HOSTS=/etc/hosts
+IP=$NGINX_IP
 
 if [ ${QUESTION} == "a" ]; then
 
