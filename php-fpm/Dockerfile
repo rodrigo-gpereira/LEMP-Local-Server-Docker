@@ -1,4 +1,4 @@
-FROM php:7.2-fpm
+FROM php:7.3-fpm
 
 #UPDATE
 RUN apt-get update && apt-get install -y \
@@ -7,6 +7,7 @@ RUN apt-get update && apt-get install -y \
 
 #LIBS EXTRAS
 RUN apt-get install -y \
+	libzip-dev \
 	libpq-dev \
 	libicu-dev g++ \
 	libbz2-dev \
@@ -33,7 +34,7 @@ RUN docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-di
 RUN docker-php-ext-install gd
 
 
-#PDO - 
+#PDO
 RUN docker-php-ext-install pdo pdo_mysql mysqli zip
 
 
