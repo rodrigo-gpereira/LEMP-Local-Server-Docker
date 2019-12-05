@@ -11,6 +11,7 @@ services:
       - ${SSLPATH}:/var/www/ssl-rootCA
       - ${NGINX_HOST_LOG_PATH}:/var/log/nginx
       - ${NGINX_SITES_PATH}:/etc/nginx/conf.d
+      - "/etc/localtime:/etc/localtime:ro"
     ports:
       - "${NGINX_HOST_HTTP_PORT}:80"
       - "${NGINX_HOST_HTTPS_PORT}:443"
@@ -30,6 +31,7 @@ services:
       - ${APPLICATION}:/var/www/html
       - ${SSLPATH}:/var/www/ssl-rootCA
       - ${CLIPATH}:/var/www/cli
+      - "/etc/localtime:/etc/localtime:ro"
     expose:
       - "9000"
     networks:
