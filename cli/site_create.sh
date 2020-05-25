@@ -13,7 +13,7 @@ SSL_DIR='./ssl-rootCA'
 USER='www-data'
 
 echo -e "Insira a senha do certificado ROOTCA:"
-read ROOTCA_PASS
+read -s ROOTCA_PASS
 
 # Sanity check
 [ $(id -g) != "0" ] && die "Script must be run as root."
